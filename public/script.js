@@ -3,7 +3,7 @@ function locomotive() {
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
-    smooth: true ,
+    smooth: true,
   });
   locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -32,13 +32,11 @@ function locomotive() {
 }
 locomotive();
 
-
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 
 window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
@@ -398,7 +396,7 @@ function scaleImage(img, ctx) {
     0,
     0,
     img.width,
-    img.height,
+    img.height - 5,
     centerShift_x,
     centerShift_y,
     img.width * ratio,
@@ -414,32 +412,30 @@ ScrollTrigger.create({
   end: `600% top`,
 });
 
-
-
-gsap.to("#page1",{
-  scrollTrigger:{
-    trigger:`#page1`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
-  }
-})
-gsap.to("#page2",{
-  scrollTrigger:{
-    trigger:`#page2`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
-  }
-})
-gsap.to("#page3",{
-  scrollTrigger:{
-    trigger:`#page3`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
-  }
-})
+gsap.to("#page1", {
+  scrollTrigger: {
+    trigger: `#page1`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`,
+  },
+});
+gsap.to("#page2", {
+  scrollTrigger: {
+    trigger: `#page2`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`,
+  },
+});
+gsap.to("#page3", {
+  scrollTrigger: {
+    trigger: `#page3`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`,
+  },
+});
